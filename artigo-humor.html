@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -6,52 +6,77 @@
     <title>Transtorno do Humor | Michelle Aquino</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header class="header">
         <div class="container container-nav">
-            <a href="index.html" class="logo">Michelle Aquino</a>
+            <div class="logo-group">
+                <span class="logo-subtitle">Psicóloga Clínica</span>
+                <a href="index.html" class="logo">Michelle Aquino</a>
+                <span class="logo-crp">CRP 05/49745</span>
+            </div>
             <nav class="nav">
+                
+
                 <ul class="nav-list">
-                    <li><a href="index.html#inicio">InÃ­cio</a></li>
+                    <li><a href="index.html#inicio">Início</a></li>
                     <li><a href="index.html#atendimento">Especialidades</a></li>
                     <li><a href="servicos.html">Modalidades</a></li>
                     <li><a href="index.html#blog">Blog</a></li>
                 </ul>
             </nav>
+            
             <div class="nav-cta">
-                <a href="https://www.instagram.com/michelle_aquino_psicologia8/" class="btn-instagram-nav" target="_blank" aria-label="Acessar Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
                 <a href="https://wa.me/5521986583952" class="btn-whatsapp-nav" aria-label="Agendar Consulta pelo WhatsApp">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                 </a>
-                <button class="btn-mobile-menu" onclick="document.querySelector('.nav').classList.toggle('active')" aria-label="Abrir menu">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
+                <a href="https://www.instagram.com/michelle_aquino_psicologia8/" target="_blank" class="btn-instagram-nav" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <button class="btn-hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
+
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <span class="logo">Michelle Aquino</span>
+            <button class="btn-close-menu" id="close-menu-btn" aria-label="Fechar menu">✕</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#atendimento">Atendimento</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+            <li><a href="servicos.html">Modalidades</a></li>
+        </ul>
+        <a href="https://wa.me/5521986583952" class="btn btn-primary mobile-cta">Agendar pelo WhatsApp</a>
+    </nav>
+
     <main>
         <section class="section" style="padding-bottom: 0;">
-            <div class="container max-w-text">
-                <a href="index.html" class="btn-back">â† Voltar ao InÃ­cio</a>
+            <div class="container max-w-article">
+                <a href="index.html" class="btn-back">← Voltar ao Início</a>
                 <span class="highlight" style="display: block; margin-bottom: 16px;">Artigo</span>
                 <h1 style="font-size: 2.75rem; margin-bottom: 24px; line-height: 1.2;">Transtorno do Humor</h1>
-                <p style="font-size: 1.15rem; color: var(--text-body); margin-bottom: 48px;">InformaÃ§Ãµes e orientaÃ§Ãµes sobre alteraÃ§Ãµes emocionais e a importÃ¢ncia da compreensÃ£o clÃ­nica.</p>
+                <p style="font-size: 1.15rem; color: var(--text-body); margin-bottom: 48px;">Informações e orientações sobre alterações emocionais e a importância da compreensão clínica.</p>
                 
                 <div class="article-content">
-                    <p>Os transtornos do humor sÃ£o mais do que simples "altos e baixos" do dia a dia. Eles representam alteraÃ§Ãµes persistentes e intensas no estado emocional, afetando diretamente a vida, o trabalho e os relacionamentos de quem os vivencia.</p>
+                    <p>Os transtornos do humor são mais do que simples "altos e baixos" do dia a dia. Eles representam alterações persistentes e intensas no estado emocional, afetando diretamente a vida, o trabalho e os relacionamentos de quem os vivencia.</p>
                     <h2>O que caracteriza o transtorno?</h2>
-                    <p>Diferente de uma tristeza passageira ou uma alegria momentÃ¢nea, o transtorno do humor envolve episÃ³dios que se arrastam. CondiÃ§Ãµes como o Transtorno Bipolar ou a Distimia requerem atenÃ§Ã£o cuidadosa, pois os sintomas sÃ£o bastante invasivos e prejudicam a rotina significativamente.</p>
-                    <h2>A importÃ¢ncia do diagnÃ³stico</h2>
-                    <p>O acompanhamento psicolÃ³gico Ã© fundamental para a estabilizaÃ§Ã£o. Entender os prÃ³prios gatilhos e aprender a manejar as mudanÃ§as de energia e emoÃ§Ã£o oferece ao paciente a possibilidade de retomar as rÃ©deas da prÃ³pria vida e evitar picos de crise.</p>
-                    <p>Buscar ajuda especializada Ã© o primeiro e mais corajoso passo para o equilÃ­brio emocional e bem-estar contÃ­nuo no longo prazo. O apoio correto muda completamente a perspectiva de vida.</p>
+                    <p>Diferente de uma tristeza passageira ou uma alegria momentânea, o transtorno do humor envolve episódios que se arrastam. Condições como o Transtorno Bipolar ou a Distimia requerem atenção cuidadosa, pois os sintomas são bastante invasivos e prejudicam a rotina significativamente.</p>
+                    <h2>A importância do diagnóstico</h2>
+                    <p>O acompanhamento psicológico é fundamental para a estabilização. Entender os próprios gatilhos e aprender a manejar as mudanças de energia e emoção oferece ao paciente a possibilidade de retomar as rédeas da própria vida e evitar picos de crise.</p>
+                    <p>Buscar ajuda especializada é o primeiro e mais corajoso passo para o equilíbrio emocional e bem-estar contínuo no longo prazo. O apoio correto muda completamente a perspectiva de vida.</p>
                 </div>
             </div>
         </section>
@@ -59,8 +84,8 @@
         <section class="section bg-soft">
             <div class="container text-center" style="text-align: center;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Precisa de acompanhamento?</h2>
-                <p style="margin-bottom: 32px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto;">A terapia Ã© um espaÃ§o seguro e acolhedor para cuidar das suas emoÃ§Ãµes.</p>
-                <a href="https://wa.me/5521986583952" class="btn btn-primary">Agende uma SessÃ£o</a>
+                <p style="margin-bottom: 32px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto;">A terapia é um espaço seguro e acolhedor para cuidar das suas emoções.</p>
+                <a href="https://wa.me/5521986583952" class="btn btn-primary">Agende uma Sessão</a>
             </div>
         </section>
     </main>
@@ -69,19 +94,19 @@
         <div class="container footer-main">
             <div class="footer-column">
                 <a href="index.html" class="logo" style="margin-bottom: 24px; display: block;">Michelle Aquino</a>
-                <p>Psicoterapia clÃ­nica para o desenvolvimento emocional e autoconhecimento.</p>
+                <p>Psicoterapia clínica para o desenvolvimento emocional e autoconhecimento.</p>
             </div>
             <div class="footer-column">
-                <h4>LocalizaÃ§Ã£o</h4>
-                <p>Rua GaviÃ£o Peixoto, IcaraÃ­<br>NiterÃ³i - RJ</p>
+                <h4>Localização</h4>
+                <p>Rua Gavião Peixoto, Icaraí<br>Niterói - RJ</p>
             </div>
             <div class="footer-column">
-                <h4>HorÃ¡rios</h4>
-                <p>Segunda a Sexta<br>08h Ã s 21h</p>
-                <p>SÃ¡bado<br>Sob consulta</p>
+                <h4>Horários</h4>
+                <p>Segunda a Sexta<br>08h às 21h</p>
+                <p>Sábado<br>Sob consulta</p>
             </div>
             <div class="footer-column">
-                <h4>NavegaÃ§Ã£o</h4>
+                <h4>Navegação</h4>
                 <a href="index.html#atendimento">Especialidades</a>
                 <a href="servicos.html">Modalidades</a>
             </div>

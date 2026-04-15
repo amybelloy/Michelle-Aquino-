@@ -147,11 +147,18 @@ img {
     margin-right: auto;
 }
 
+.max-w-article {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .full-width {
     width: 100%;
 }
 
-.btn-whatsapp-nav, .btn-instagram-nav {
+.btn-whatsapp-nav,
+.btn-instagram-nav {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,19 +170,16 @@ img {
     transition: var(--transition);
 }
 
-.btn-whatsapp-nav:hover, .btn-instagram-nav:hover {
+.btn-whatsapp-nav:hover,
+.btn-instagram-nav:hover {
     background-color: var(--primary);
     color: var(--white);
     transform: translateY(-2px);
 }
 
-.btn-mobile-menu {
-    display: none;
-}
-
 /* Header */
 .header {
-    height: 80px;
+    height: 110px; /* Increased to accommodate multi-line branding */
     display: flex;
     align-items: center;
     position: sticky;
@@ -192,13 +196,37 @@ img {
     align-items: center;
 }
 
+.logo-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.logo-subtitle {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: -2px;
+}
+
 .logo {
-    font-size: 1.3rem; 
+    font-size: 1.35rem;
     background: linear-gradient(135deg, var(--primary), #115e59);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
-    margin-right: 32px; 
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.logo-crp {
+    font-size: 0.6rem;
+    color: var(--text-body);
+    opacity: 0.6;
+    margin-top: -2px;
 }
 
 .nav {
@@ -206,7 +234,10 @@ img {
 }
 
 .nav-cta {
-    margin-left: 32px; /* Small separation from the menu */
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .nav-list {
@@ -221,6 +252,151 @@ img {
 
 .nav-list a:hover {
     color: var(--primary);
+}
+
+/* ========================
+   MOBILE HAMBURGER MENU
+   ======================== */
+
+/* Hamburger button - hidden on desktop */
+.btn-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.btn-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.btn-hamburger:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Active state - animate to X */
+.btn-hamburger.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.btn-hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.btn-hamburger.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Dark overlay */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1100;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.mobile-overlay.is-open {
+    display: block;
+    opacity: 1;
+}
+
+/* Slide-in drawer */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    height: 100dvh;
+    background: var(--white);
+    z-index: 1200;
+    padding: 32px 28px 48px;
+    transform: translateX(110%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: -20px 0 60px rgba(0,0,0,0.08);
+}
+
+.mobile-menu.is-open {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-close-menu {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-body);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.btn-close-menu:hover {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.mobile-nav-list li a {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Outfit', sans-serif;
+    transition: var(--transition);
+}
+
+.mobile-nav-list li a:hover {
+    color: var(--primary);
+    padding-left: 8px;
+}
+
+.mobile-cta {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 992px) {
+    .btn-hamburger {
+        display: flex;
+    }
 }
 
 /* Hero */
@@ -770,43 +946,43 @@ img {
 /* Responsive Extensions */
 @media (max-width: 992px) {
     .modalidades-grid, .transtornos-layout { grid-template-columns: 1fr; }
-    
-    .modalidade-item { 
-        padding: 40px; 
-    }
-    
+    .modalidade-item { padding: 40px; }
     .cta-final-page { padding: 48px 24px; }
-    
+}
+
+@media (max-width: 992px) {
     .container {
         padding: 0 24px;
     }
 
     .container-nav {
-        gap: 20px;
+        gap: 20px; /* Tighter gap for tablet/mobile */
         justify-content: space-between;
+    }
+
+    .header {
+        height: 90px;
+    }
+
+    .logo-group {
+        align-items: flex-start;
+        margin-right: 0;
     }
 
     .logo {
         margin-right: 0;
-        font-size: 1.15rem;
     }
 
     .hero-grid,
     .sobre-grid,
     .contato-grid {
         grid-template-columns: 1fr;
-        gap: 56px;
+        gap: 64px;
         text-align: center;
     }
 
     .hero-title {
         font-size: 2.75rem;
-    }
-    
-    /* Auto scale any inline styled titles */
-    h1[style] {
-        font-size: 2.5rem !important;
-        margin-bottom: 24px !important;
     }
 
     .hero-description,
@@ -831,56 +1007,13 @@ img {
 
     .hero-image-wrapper {
         max-width: 400px;
-        width: 100%;
         margin: 0 auto;
         padding: 24px;
         border-radius: 32px;
     }
 
-    .btn-mobile-menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        background-color: var(--primary);
-        color: var(--white);
-        border: none;
-        border-radius: 12px;
-        margin-left: 12px;
-        cursor: pointer;
-        transition: var(--transition);
-    }
-
-    .nav-cta {
-        display: flex;
-        align-items: center;
-    }
-
     .nav {
         display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.98);
-        padding: 40px 24px;
-        box-shadow: 0 40px 80px rgba(0,0,0,0.1);
-        border-bottom: 1px solid var(--border);
-    }
-    
-    .nav.active {
-        display: block;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
-    }
-    
-    .nav-list a {
-        font-size: 1.25rem;
     }
 
     /* List Responsive */
@@ -908,7 +1041,6 @@ img {
     /* Sobre Responsive */
     .sobre-image-wrapper {
         max-width: 400px;
-        width: 100%;
         margin: 0 auto;
         padding: 24px;
         border-radius: 32px;
@@ -923,65 +1055,14 @@ img {
     .hero-title {
         font-size: 2.25rem;
     }
-    
-    h1[style] {
-        font-size: 2rem !important;
-        line-height: 1.2 !important;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
 
     .hero-actions {
         flex-direction: column;
-        gap: 16px;
-    }
-    
-    .hero-actions .btn {
-        width: 100%;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 24px;
-    }
-    
-    .modalidade-item {
-        flex-direction: column;
-        text-align: center;
-        padding: 32px 20px;
-        gap: 16px;
-    }
-    
-    .transtornos-layout {
-        gap: 40px;
-    }
-    
-    .cta-final-page h3 {
-        font-size: 2rem;
-    }
-    
-    .badge {
-        font-size: 0.75rem;
-        padding: 8px 12px;
-    }
-    
-    .contato-grid {
-        gap: 40px;
-    }
-    
-    .card {
-        padding: 32px 24px;
-    }
-    
-    .hero-image-wrapper, .sobre-image-wrapper {
-        padding: 16px;
-        border-radius: 20px;
-    }
-    
-    .nav-cta {
-        margin-left: 16px;
     }
 }
