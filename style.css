@@ -151,7 +151,7 @@ img {
     width: 100%;
 }
 
-.btn-whatsapp-nav {
+.btn-whatsapp-nav, .btn-instagram-nav {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,7 +163,7 @@ img {
     transition: var(--transition);
 }
 
-.btn-whatsapp-nav:hover {
+.btn-whatsapp-nav:hover, .btn-instagram-nav:hover {
     background-color: var(--primary);
     color: var(--white);
     transform: translateY(-2px);
